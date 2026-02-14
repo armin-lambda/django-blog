@@ -1,0 +1,105 @@
+/* ---------------------------------------- */
+/* base */
+
+@font-face {
+    font-family: "Apple Chancery";
+    src: url(../fonts/Apple\ Chancery\ 100.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-image: url(../images/sky.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #1A1A1A;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #1E3A8A;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #2563EB;
+}
+
+.content {
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.state-box {
+    width: 70%;
+    margin: 3rem auto;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    font-family: 'Special Elite', serif;
+    font-size: 1.2rem;
+    color: #1E3A8A;
+}
+
+@media (max-width: 768px) {
+    .state-box {
+        width: 90%;
+        font-size: 1rem;
+    }
+}
+
+/* ---------------------------------------- */
+
+
+/* ---------------------------------------- */
+/* Header */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1rem;
+    text-align: center;
+
+    background-color: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(6px);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.header h1 {
+    font-family: "Apple Chancery", serif;
+    font-size: 2.8rem;
+    color: #1E3A8A;
+    margin: 0;
+}
+
+.header h2 {
+    font-family: "Apple Chancery", serif;
+    font-size: 1.2rem;
+    color: #475569;
+    margin-top: 0.4rem;
+}
+
+@media (max-width: 400px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header h2 {
+        font-size: 1rem;
+    }
+}
+
+/* ---------------------------------------- */

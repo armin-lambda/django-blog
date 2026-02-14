@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block extra_headers %}
+<link rel="stylesheet" href="{% static 'blog/css/post_list.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <form action="" method="get" class="search-form">
+        <input type="text" name="search" placeholder="Search posts..." class="search-input" id="searchInput">
+        <button type="submit" class="search-btn">Search</button>
+        {% if "search" in request.GET %}
+            <a href="{% url 'blog:post-list' %}" class="clear-btn">×</a>
+        {% endif %}
+    </form>
+
+    {% for post in post_list %}
+        <div class="card">
+            <a href="{{ post.get_absolute_url }}" class="title">{{ post.title }}</a>
+            <span class="date">Published at: {{ post.created_at }}</span>
+            <p class="excerpt">
+                {{ post.body|truncatewords:50 }}
+            </p>
+            <p class="email">armin.lambda@gmail.com</p>
+        </div>
+    {% empty %}
+        <div class="state-box">Nothing to show...</div>
+    {% endfor %}
+</div>
+
+{% endblock %}

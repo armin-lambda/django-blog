@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block extra_headers %}
+<link rel="stylesheet" href="{% static 'blog/css/post_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <a href="{% url 'blog:post-list' %}" class="back">⟵ Back to posts</a>
+    <h1 class="title">{{ post.title }}</h1>
+    <time class="date">Published at: {{ post.created_at }}</time>
+    <div class="body">
+        {{ post.body|linebreaks }}
+    </div>
+    <p class="email">armin.lambda@gmail.com</p>
+</div>
+
+{% endblock %}
